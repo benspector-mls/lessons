@@ -45,7 +45,9 @@ In the early days of programming, programs were used exclusively in a terminal c
 
 ![](https://homepages.uc.edu/~thomam/Intro_OOP_Text/Images/console%20app.png)
 
-These kinds of programs are still valuable for simple tasks like fliping a coin.
+To start, we'll write programs that use the console for input and output. These are called Command Line Interfaces (CLIs). These kinds of programs are still valuable for simple tasks like fliping a coin. 
+
+Later on, you'll get the chance to use HTML, CSS, React, and other front-end tools to create Graphical User Interfaces (GUIs) that users can interact with on a website. We'll still have the console, but it will be used more for testing and debugging.
 
 ## The creativity of programming / a review of core coding concepts
 Program logic can be written in many different ways. This is what makes programming a *creative* endeavor. 
