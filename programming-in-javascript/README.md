@@ -129,7 +129,7 @@ console.log(result);
 console.log(rollMultipleDie(10, 6));
 ```
 
-We can add in user input to make it more interactive
+We can add in user input to make it more interactive ([Run it here](https://replit.com/@BenSpector/rollDieWithInput#index.js)!)
 
 ```js
 function rollDie(sides) {  
