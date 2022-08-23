@@ -17,7 +17,9 @@ Programs help us **automate** tasks that would otherwise be tedious and time con
 
 **How?** Most programs follow the general structure: **input** > **logic** > **output**. When writing a program, we can think about the output we want and how we can get to that result when the program is given inputs.
 
-Here's an example of a program for flipping a coin. Note, not all inputs are provided by a user. ([Run it here!](https://replit.com/@BenSpector/coinFlilp#index.js))
+Here's an example of a program for flipping a coin. ([Run it here!](https://replit.com/@BenSpector/coinFlilp#index.js))
+
+> Note: Not all inputs are provided by a human user. In this case, the random number is the "input" and it is provided by the computer. 
 
 ```js
 // The random number is the "input". 
