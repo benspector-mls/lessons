@@ -45,9 +45,9 @@ In the early days of programming, programs were used exclusively in a terminal c
 
 ![](https://homepages.uc.edu/~thomam/Intro_OOP_Text/Images/console%20app.png)
 
-To start, we'll write programs that use the console for input and output. These are called Command Line Interfaces (CLIs). These kinds of programs are still valuable for simple tasks like fliping a coin. 
+To start, we'll write programs that use the console for input and output. These are called Command Line Interfaces (CLIs). These kinds of programs are still valuable for simple tasks like fliping a coin or rolling dice. 
 
-Later on, you'll get the chance to use HTML, CSS, React, and other front-end tools to create Graphical User Interfaces (GUIs) that users can interact with on a website. We'll still have the console, but it will be used more for testing and debugging.
+Later on, you'll get the chance to use HTML, CSS, React, and other front-end tools to create Graphical User Interfaces (GUIs) that users can interact with on a website. We'll still have the console, but it will be used more for **testing** and **debugging**.
 
 ## The creativity of programming / a review of core coding concepts
 Program logic can be written in many different ways. This is what makes programming a *creative* endeavor. 
@@ -87,7 +87,17 @@ let finalRoll = rollDie() + rollDie();
 console.log(finalRoll);
 ```
 
-Parameters in functions open the door to expanded features: Roll *any* kind of dice
+### Adding Features
+
+Now, we can start expanding the features of the program by adding in:
+* Parameters
+* Looping
+* User Input
+* Arrays of data to iterate through
+
+Let's see...
+
+Parameters in functions make the function more flexible. Instead of sticking with 6 sides on the die, we can make the program roll *any* kind of dice that we specify.
 
 ```js
 // Functions are like mini programs, they have their own input, logic, and output
@@ -96,7 +106,8 @@ function rollDie(sides) {
 }
 
 // Arguments are "passed" to functions that have parameters.
-let finalRoll = rollDie(20) + rollDie(20);
+// Here, we tell the function that we want to roll one die with 20 sides and one with 6
+let finalRoll = rollDie(20) + rollDie(6);
 
 // output
 console.log(finalRoll);
@@ -110,7 +121,7 @@ function rollDie(sides) {
   return Math.ceil(Math.random() * sides);
 }
 
-function rollMultipleDie(times, sides) {
+function rollDieXTimes(sides, times) {
   // Keep a running tally
   let total = 0;
 
@@ -123,12 +134,12 @@ function rollMultipleDie(times, sides) {
   return total;
 }
 
-// Roll 5 20-sided die
-let result = rollMultipleDie(5, 20);
+// Roll a 20-sided die 5 times
+let result = rollDieXTimes(20, 5);
 console.log(result);
 
-// Roll 10 6-sided die
-console.log(rollMultipleDie(10, 6));
+// Roll a 6-sided die 10 times
+console.log(rollDieXTimes(6, 10));
 ```
 
 We can add in user input to make it more interactive ([Run it here](https://replit.com/@BenSpector/rollDieWithInput#index.js)!)
@@ -160,6 +171,21 @@ let result = rollMultipleDie(times, sides);
 
 // Output
 console.log(result);
+```
+
+Or use an array to roll a series of die...
+
+```js
+function rollDie(sides) {  
+  return Math.ceil(Math.random() * sides);
+}
+
+// We want to roll two 6-sided die, two 20-sided die, and a 10-sided die
+const arrayOfDice = [6, 6, 20, 20, 10];
+let total = 0;
+arrayOfDice.forEach(die => total += rollDie(die));
+
+console.log(total);
 ```
 
 ## Finally, a few notes...
