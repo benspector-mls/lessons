@@ -91,13 +91,12 @@ console.log(finalRoll);
 
 ### Adding Features
 
-Now, we can start expanding the features of the program by adding in:
-* Parameters
-* Looping
-* User Input
-* Arrays of data to iterate through
+Adding Features
 
-Let's see...
+Now, we can start expanding the features of the program by adding in:
+* Parameters which inject flexibility into our functions
+* Loops which allow us to easily repeat a task many times
+* Arrays offer a new way to organize data that allows for iteration (remember to make use of higher-order functions!)
 
 Parameters in functions make the function more flexible. Instead of sticking with 6 sides on the die, we can make the program roll *any* kind of dice that we specify.
 
@@ -115,7 +114,7 @@ let finalRoll = rollDie(20) + rollDie(6);
 console.log(finalRoll);
 ```
 
-We can use functions to help us write other functions. Loops let us automatically do something MANY times: Roll an s-sided die any number of times
+Loops let us automatically do something MANY times: Roll an s-sided die any number of times
 
 ```js
 // We can use this function to help us write another function
