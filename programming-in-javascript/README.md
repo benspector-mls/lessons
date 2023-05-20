@@ -10,8 +10,8 @@ I think this could be useful for the technical workshop 2?
 * Exposure to many examples of the same function, written in different ways
 * Demonstrate the progression of a program to expand its features
 * Show that programs are useful! They aren't just a series of Math-related functions that we have to complete for an assignment
-* Re-emphasizing **input** > **logic** > **output**
-* There is no "right" way to write a program (though there may be more efficient ways)
+* Understanding that "everything is just **inputs** and **outputs**"
+* There is no "right" way to write a program (but there are styles, each with their own tradeoffs)
 
 ## Why we program... 
 
