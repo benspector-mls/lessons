@@ -15,31 +15,100 @@ I think this could be useful for the technical workshop 2?
 
 ## Why we program... 
 
-Programs help us **automate** tasks that would otherwise be tedious and time consuming. Imagine we wanted to flip a coin 100 times. Rather than doing it ourselves, we can write a program to do it for us.
+Programming is the act of building a digital tool we call "software". All software serves some purpose for making our lives easier (or more enjoyable).  
 
-**How?** Most programs follow the general structure: **input** > **logic** > **output**. When writing a program, we can think about the output we want and how we can get to that result when the program is given inputs.
+Certain tools, like a hammer (increasing our strength) or a car (increasing our speed), enhance our phsycial abilities in the material world. **Software enhances our abilities in a digital world to perform tedius, predictable, and repeated tasks** with no effort at all.
 
-Here's an example of a program for flipping a coin. ([Run it here!](https://replit.com/@BenSpector/coinFlilp#index.js))
+That is, if we can solve the puzzle of how to instruct our computer to do so. 
 
-> Note: Not all inputs are provided by a human user. In this case, the random number is the "input" and it is provided by the computer. 
+## Spoiler: The "puzzle" of a program is just inputs and outputs
+
+Imagine we wanted to flip a coin 100 times. A perfect task for a program to solve!
+
+**How?** Most programs are in some way, shape, or form, simply the process of converting **inputs** to **output**. 
+
+### What counts as an "input"?"
+
+The **inputs** to a program typically come from a user. The most basic input that a user can provide, is clicking a button to run the program. 
+    * Imagine turning on a toaster. That's user input.
+    * Imagine pressing a button to start your dishwasher. That's user input.
+    * Imagine turning your car key in the ignition. That's user input. 
+    
+Inputs can also be more than just flipping a switch. They can include keyboard inputs, gaming controller inputs, mouse clicking and movement inputs, touch inputs, and much more!
+
+### What counts as an "output"?"
+
+The output is often the more amorphous (and fun) side of the equation to think about, and the exact output of your software may be an experience (or collection of experiences) that your user will have. 
+
+**Q: How would you describe the output of our task?**
+<details></summary>Ben's Answer</summary>
+
+I want to know the results of flipping a coin 100 times. To be more specific, I want to know how many heads and how many tails came up out of those 100 flips.
+
+</details>
+
+### Writing the program
+
+In order to flip a coin 100 times, I need to figure out how to flip a coin once.
+
+> _This is called "decomposition". I took the bigger problem (flip a coin 100 times) and turned it into a smaller problem (flip a coin once)._
+
+Here's an example of a program for flipping a coin one time. ([Run it here!](https://replit.com/@BenSpector/coinFlilp#index.js))
 
 ```js
-// The random number is the "input". 
-// It will be a decimal between 0 and 1
+// We want to know how many heads and tails will be flipped.
+let numberOfHeads = 0;
+let numberOfTails = 0;
+
+// First generate a random number between 0 and 1 (`Math.random()` is a helpful "function" that handles that tricky task) 
 let randomNumber = Math.random();
 
-// Half of the results will be less than .5 so we'll call those heads
-let isHeads = randomNumber < .5;
+// If the random number is less than 0.5, we'll say it was a "heads"
+if (randomNumber < .5) {
+  numberOfHeads += 1; // increase the value of `numberOfHeads` by 1
+}
 
-// Use that boolean to choose the string we want to print
-let coinFlipResult = isHeads ? "Heads" : "Tails";
+// otherwise, tell the user it was a "tails"
+else {
+  numberOfTails += 1; // increase the value of `numberOfTails` by 1
+}
 
-// Output the result
-console.log(coinFlipResult);
+// Display the result to the user with some formatted text
+console.log(`H: ${numberOfHeads}  T: ${numberOfTails}`)
 ```
 
+Now, for repeating this process 100 times:
+
+```js
+// We want to know how many heads and tails will be flipped.
+let numberOfHeads = 0;
+let numberOfTails = 0;
+
+// We've turned that code into a re-useable "function" called `flipCoinOnce`
+// But only the code responsible for flipping the coin and counting the result...
+let flipCoinOnce = () => {
+  let randomNumber = Math.random();
+  if (randomNumber < .5) {
+    numberOfHeads += 1;
+  } else {
+    numberOfTails += 1; 
+  }
+}
+
+// That way, we can "Invoke" the function called `flipCoinOnce` 100 times...
+for (let i = 1; i <= 100; i = i+1) {
+  flipCoinOnce();
+};
+
+// ...before displaying the result to the user with some formatted text
+console.log(`H: ${numberOfHeads}  T: ${numberOfTails}`)
+```
+
+#### The order of your operations matters!
+
 **A Note about math in CS**
-> These examples use math that may appear daunting (or excite you!). These particular examples of using math to generate a random number and working with that random number is quite common. It will be useful to understand how `Math.random()`, `Math.ceil()`, and `Math.floor()` work. That said, most of the math you will do as a programmer will not be much more complicated than this.
+> These examples use math that may appear daunting (or excite you!). These particular examples of using math to generate a random number and working with that random number is quite common. It will be useful to understand how `Math.random()` work. Don't worry, most of the math that you will have to do has been made loads easier by other programmers before us. Our computers are powerful calculators!
+> It is, however, important to understand how the order of your operations matters"
 
 ## Programming in the Console
 
